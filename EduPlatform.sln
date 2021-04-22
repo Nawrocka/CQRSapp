@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduPlatform.Domain", "EduPlatform\EduPlatform.Domain.csproj", "{07F3EF48-ECED-43E3-B98D-C68162900016}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EduPlatform.Domain", "EduPlatform\EduPlatform.Domain.csproj", "{07F3EF48-ECED-43E3-B98D-C68162900016}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{5F416508-AD69-47DA-A892-66F31C240A22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduPlatform.Application", "EduPlatform.Application\EduPlatform.Application.csproj", "{144EFD91-B0E0-45FE-A4E2-0EBD7DD9BDA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EduPlatform.Application", "EduPlatform.Application\EduPlatform.Application.csproj", "{144EFD91-B0E0-45FE-A4E2-0EBD7DD9BDA9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{108E31C7-19EA-4540-AC9C-6475B32141A4}"
 EndProject

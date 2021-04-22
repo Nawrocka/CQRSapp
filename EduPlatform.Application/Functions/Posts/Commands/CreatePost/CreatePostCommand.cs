@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EduPlatform.Application.Functions.Posts.Commands.CreatePost
 {
-    public class CreatePostCommand : IRequest<int>
+    public class CreatePostCommand : IRequest<CreatePostCommandResponse>
     {
         public int Id { get; set; }
         public string Title { get; set; }

@@ -2,10 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace EduPlatform.Application.Contracts.Persistance
 {
     public interface IPostRepository: IWebinarRepository<Post>
     {
+        public Task<bool> IsTitleAdnAuthorAlreadyExist(string title, string author);
     }
 }
