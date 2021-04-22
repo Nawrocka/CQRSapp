@@ -7,6 +7,7 @@ using EduPlatform.Application.Functions.Posts.Commands.DeletePost;
 using EduPlatform.Application.Functions.Posts.Commands.UpdatePost;
 using EduPlatform.Application.Functions.Posts.Queries.GetPostDetail;
 using EduPlatform.Application.Functions.Posts.Queries.GetPostsList;
+using EduPlatform.Application.Functions.Webinars.Commands.CreateWebinar;
 using EduPlatform.Application.Functions.Webinars.Queries.GetWebinar;
 using EduPlatform.Application.Functions.Webinars.Queries.GetWebinarsListByDate;
 using EduPlatform.Domain.Entities;
@@ -31,6 +32,7 @@ namespace EduPlatform.Application.Mapper
 
             CreateMap<Webinar, WebinarViewModel>().ReverseMap();
             CreateMap<Webinar, WebinarInListViewModel>().ReverseMap();
+            CreateMap<Webinar, CreateWebinarCommand>().ReverseMap();
 
             CreateMap<Post, CreatePostCommand>().ReverseMap();
             CreateMap<Post, UpdatePostCommand>();
