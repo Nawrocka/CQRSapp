@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EduPlatform.Application.Functions.Categories.Commands.CreateCategory
 {
-    public class CreateCategoryCommand : IRequest<int>
+    public class CreateCategoryCommand : IRequest<CreateCategoryCommandResponse>
     { 
         public int Id { get; set; }
         public string Name { get; set; }

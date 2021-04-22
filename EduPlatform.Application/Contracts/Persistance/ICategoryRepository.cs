@@ -10,5 +10,7 @@ namespace EduPlatform.Application.Contracts.Persistance
     public interface ICategoryRepository: IWebinarRepository<Category>
     {
         public Task<List<Category>> GetCategoriesWithPosts(SearchCategoryOptions searchCategoryOption);
+
+        public Task<bool> IsNameAlreadyExist(string name);
     }
 }
