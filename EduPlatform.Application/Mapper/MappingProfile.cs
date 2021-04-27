@@ -25,7 +25,7 @@ namespace EduPlatform.Application.Mapper
             CreateMap<Post, PostDetailViewModel>().ReverseMap();
             CreateMap<Category, CategoryDto>();
 
-            CreateMap<Category, CategoryInListViewModel>();
+            CreateMap<Category, CategoryInListViewModel>().ReverseMap();
             CreateMap<Category, CategoryWithPostsInListViewModel>();
             CreateMap<Post, CategoryPostDto>();
             CreateMap<Category, CreateCategoryCommand>().ReverseMap();

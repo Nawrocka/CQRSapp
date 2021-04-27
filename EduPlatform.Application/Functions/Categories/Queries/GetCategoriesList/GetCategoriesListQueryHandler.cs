@@ -13,10 +13,10 @@ namespace EduPlatform.Application.Functions.Categories.Queries.GetCategoriesList
 {
     public class GetCategoriesListQueryHandler : IRequestHandler<GetCategoriesListQuery, List<CategoryInListViewModel>>
     {
-        private readonly IWebinarRepository<Category> _categoryRepository;
+        private readonly ICategoryRepository _categoryRepository;
         private readonly IMapper _mapper;
 
-        public GetCategoriesListQueryHandler(IWebinarRepository<Category> categoryRepository, IMapper mapper)
+        public GetCategoriesListQueryHandler(ICategoryRepository categoryRepository, IMapper mapper)
         {
             _categoryRepository = categoryRepository;
             _mapper = mapper;
