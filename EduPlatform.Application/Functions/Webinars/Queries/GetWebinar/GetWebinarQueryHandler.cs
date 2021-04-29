@@ -12,10 +12,10 @@ namespace EduPlatform.Application.Functions.Webinars.Queries.GetWebinar
 {
     class GetWebinarQueryHandler : IRequestHandler<GetWebinarQuery, WebinarViewModel>
     {
-        private readonly IWebinarRepository<Webinar> _webinarRepository;
+        private readonly IAsyncRepository<Webinar> _webinarRepository;
         private readonly IMapper _mapper;
 
-        public GetWebinarQueryHandler(IWebinarRepository<Webinar> webinarRepository,IMapper mapper)
+        public GetWebinarQueryHandler(IAsyncRepository<Webinar> webinarRepository,IMapper mapper)
         {
             _webinarRepository = webinarRepository;
             _mapper = mapper;

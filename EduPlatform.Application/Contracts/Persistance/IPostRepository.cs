@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EduPlatform.Application.Contracts.Persistance
 {
-    public interface IPostRepository: IWebinarRepository<Post>
+    public interface IPostRepository: IAsyncRepository<Post>
     {
         public Task<bool> IsTitleAdnAuthorAlreadyExist(string title, string author);
     }

@@ -12,9 +12,9 @@ namespace EduPlatform.Application.Functions.Posts.Commands.DeletePost
 {
     public class DeletePostCommandHandler : IRequestHandler<DeletePostCommand>
     {
-        private readonly IWebinarRepository<Post> _postRepository;
+        private readonly IAsyncRepository<Post> _postRepository;
 
-        public DeletePostCommandHandler(IWebinarRepository<Post> postRepository)
+        public DeletePostCommandHandler(IAsyncRepository<Post> postRepository)
         {
             _postRepository = postRepository;
         }

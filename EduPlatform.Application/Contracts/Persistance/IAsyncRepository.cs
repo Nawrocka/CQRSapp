@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace EduPlatform.Application.Contracts.Persistance
 {
-    public interface IWebinarRepository <T> where T : class
+    public interface IAsyncRepository <T> where T : class
     {
         Task<T> GetByIdAsync(int id);
         Task<IReadOnlyList<T>> GetAllAsync();

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EduPlatform.Application.Contracts.Persistance
 {
-    public interface ICategoryRepository: IWebinarRepository<Category>
+    public interface ICategoryRepository: IAsyncRepository<Category>
     {
         public Task<List<Category>> GetCategoriesWithPosts(SearchCategoryOptions searchCategoryOption);
 

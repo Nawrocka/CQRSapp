@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EduPlatform.Application.Contracts.Persistance
 {
-    public interface IWebinarRepository: IWebinarRepository<Webinar>
+    public interface IWebinarRepository: IAsyncRepository<Webinar>
     {
         Task<List<Webinar>> GetPagedWebinarsForDate(SearchOptionsWebinars option, int page, int pageSize, DateTime? date);
 

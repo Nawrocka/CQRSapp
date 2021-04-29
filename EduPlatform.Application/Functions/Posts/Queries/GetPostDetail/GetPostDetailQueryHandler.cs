@@ -12,11 +12,11 @@ namespace EduPlatform.Application.Functions.Posts.Queries.GetPostDetail
 {
     class GetPostDetailQueryHandler : IRequestHandler<GetPostDetailQuery, PostDetailViewModel>
     {
-        private readonly IWebinarRepository<Post> _postRepository;
+        private readonly IAsyncRepository<Post> _postRepository;
         private readonly IMapper _mapper;
-        private readonly IWebinarRepository<Category> _categoryRepository;
+        private readonly IAsyncRepository<Category> _categoryRepository;
 
-        public GetPostDetailQueryHandler(IWebinarRepository<Post> postRepository, IWebinarRepository<Category> categoryRepository, IMapper mapper )
+        public GetPostDetailQueryHandler(IAsyncRepository<Post> postRepository, IAsyncRepository<Category> categoryRepository, IMapper mapper )
         {
             _mapper = mapper;
             _postRepository = postRepository;

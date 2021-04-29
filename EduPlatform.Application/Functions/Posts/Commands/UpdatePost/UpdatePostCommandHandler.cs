@@ -12,10 +12,10 @@ namespace EduPlatform.Application.Functions.Posts.Commands.UpdatePost
 {
     public class UpdatePostCommandHandler : IRequestHandler<UpdatePostCommand>
     {
-        private readonly IWebinarRepository<Post> _postRepository;
+        private readonly IAsyncRepository<Post> _postRepository;
         private readonly IMapper _mapper;
 
-        public UpdatePostCommandHandler(IWebinarRepository<Post> postRepository, IMapper mapper)
+        public UpdatePostCommandHandler(IAsyncRepository<Post> postRepository, IMapper mapper)
         {
             _postRepository = postRepository;
             _mapper = mapper;

@@ -14,9 +14,9 @@ namespace EduPlatform.Application.Functions.Posts.Queries.GetPostsList
     public class GetPostsListQueryHandler : IRequestHandler<GetPostsListQuery, List<PostInListViewModel>>
     {
         private readonly IMapper _mapper;
-        private readonly IWebinarRepository<Post> _postRepository;
+        private readonly IAsyncRepository<Post> _postRepository;
 
-        public GetPostsListQueryHandler(IMapper mapper, IWebinarRepository<Post> postRepository)
+        public GetPostsListQueryHandler(IMapper mapper, IAsyncRepository<Post> postRepository)
         {
             _mapper = mapper;
             _postRepository = postRepository;
