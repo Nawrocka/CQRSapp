@@ -12,10 +12,10 @@ namespace EduPlatform.Application.Functions.Webinars.Queries.GetWebinarsListByDa
 {
     public class GetWebinarsListByDateQueryHandler : IRequestHandler<GetWebinarsListByDateQuery, PageWebinarInListViewModel>
     {
-        private readonly IAsyncRepository _webinarRepository;
+        private readonly IWebinarRepository _webinarRepository;
         private readonly IMapper _mapper;
 
-        public GetWebinarsListByDateQueryHandler(IAsyncRepository webinarRepositor, IMapper mapper)
+        public GetWebinarsListByDateQueryHandler(IWebinarRepository webinarRepositor, IMapper mapper)
         {
             _webinarRepository = webinarRepositor;
             _mapper = mapper;
