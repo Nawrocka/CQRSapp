@@ -1,6 +1,7 @@
 ﻿using EduPlatform.Application.Common;
 using EduPlatform.Application.Contracts.Persistance;
 using EduPlatform.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,41 +10,57 @@ using System.Threading.Tasks;
 
 namespace EduPlatform.Persistence.EF.Repositories
 {
-    public class CategoryRepository : ICategoryRepository
+    public class CategoryRepository : BaseRepository<Category>, ICategoryRepository
     {
-        public Task<Category> AddAsync(Category entity)
+        public CategoryRepository(EduPlatformContext dbContext) : base(dbContext)
         {
-            throw new NotImplementedException();
         }
 
-        public Task DeleteAsync(Category entity)
+        public async Task<List<Category>> GetCategoriesWithPosts(SearchCategoryOptions searchCategoryOption)
         {
-            throw new NotImplementedException();
-        }
+            var allCategories = await _dbContext.Categories.Include(p => p.Posts).ToListAsync();
 
-        public Task<IReadOnlyList<Category>> GetAllAsync()
-        {
-            throw new NotImplementedException();
-        }
+            switch (searchCategoryOption)
+            {
+                case SearchCategoryOptions.All:
+                    return allCategories;
+                case SearchCategoryOptions.FirstBestThisMonth:
+                    {
+                        DateTime d = DateTime.Now;
+                        allCategories = allCategories.Where(p => p.Posts.Any(p => (p.Date.Month == d.Month && p.Date.Year == d.Date.Year))).ToList();
 
-        public Task<Category> GetByIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
+                        //for every category I'm creating a list and add one best post (list because this is the type where category keeps posts in its property)
+                        return GetCategoriesWithTheBestPost(allCategories);
+                    }                    
+                case SearchCategoryOptions.FirstBestThisTime:
+                    {
+                        return GetCategoriesWithTheBestPost(allCategories);
+                    }
+                default:
+                    return null;
+            }
 
-        public Task<List<Category>> GetCategoriesWithPosts(SearchCategoryOptions searchCategoryOption)
-        {
-            throw new NotImplementedException();
         }
 
         public Task<bool> IsNameAlreadyExist(string name)
         {
-            throw new NotImplementedException();
+            var search = _dbContext.Categories.Any(c => c.Name.Equals(name));
+
+            return Task.FromResult(search);
         }
 
-        public Task UpdateAsync(Category entity)
+        private static List<Category> GetCategoriesWithTheBestPost(List<Category> allCategories)
         {
-            throw new NotImplementedException();
+            foreach (var c in allCategories)
+            {
+                var withMaxRate = c.Posts.Aggregate((r1, r2) => r1.Rate > r2.Rate ? r1 : r2);
+
+                c.Posts = new List<Post>();
+
+                if (withMaxRate != null)
+                    c.Posts.Add(withMaxRate);
+            }
+            return allCategories;
         }
     }
 }

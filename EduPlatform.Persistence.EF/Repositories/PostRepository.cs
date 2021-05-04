@@ -1,43 +1,25 @@
 ﻿using EduPlatform.Application.Contracts.Persistance;
 using EduPlatform.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+
 using System.Threading.Tasks;
 
 namespace EduPlatform.Persistence.EF.Repositories
 {
-    public class PostRepository : IPostRepository
+    public class PostRepository : BaseRepository<Post>, IPostRepository
     {
-        public Task<Post> AddAsync(Post entity)
+        public PostRepository(EduPlatformContext dbContext): base(dbContext)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task DeleteAsync(Post entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IReadOnlyList<Post>> GetAllAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Post> GetByIdAsync(int id)
-        {
-            throw new NotImplementedException();
         }
 
         public Task<bool> IsTitleAdnAuthorAlreadyExist(string title, string author)
         {
-            throw new NotImplementedException();
-        }
+            var matches = _dbContext.Posts
+                .Any(p => p.Title.Equals(title) && p.Author.Equals(author));
 
-        public Task UpdateAsync(Post entity)
-        {
-            throw new NotImplementedException();
+            return Task.FromResult(matches);
         }
     }
 }

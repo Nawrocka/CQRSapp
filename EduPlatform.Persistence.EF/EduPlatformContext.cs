@@ -42,7 +42,9 @@ namespace EduPlatform.Persistence.EF
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //dodaje konfiguracje PostConfigurations itd. przeszukujac projekt.
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(EduPlatformContext).Assembly);
+
             modelBuilder.SeedPost();
             modelBuilder.SeedWebinar();
             modelBuilder.SeedCategory();

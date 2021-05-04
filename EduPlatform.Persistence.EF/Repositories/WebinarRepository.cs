@@ -9,26 +9,10 @@ using System.Threading.Tasks;
 
 namespace EduPlatform.Persistence.EF.Repositories
 {
-    public class WebinarRepository : IWebinarRepository
+    public class WebinarRepository : BaseRepository<Webinar>, IWebinarRepository
     {
-        public Task<Webinar> AddAsync(Webinar entity)
+        public WebinarRepository(EduPlatformContext dbContext): base(dbContext)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task DeleteAsync(Webinar entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IReadOnlyList<Webinar>> GetAllAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Webinar> GetByIdAsync(int id)
-        {
-            throw new NotImplementedException();
         }
 
         public Task<List<Webinar>> GetPagedWebinarsForDate(SearchOptionsWebinars option, int page, int pageSize, DateTime? date)
@@ -37,11 +21,6 @@ namespace EduPlatform.Persistence.EF.Repositories
         }
 
         public Task<int> GetTotalCountOfWebinarsForDate(SearchOptionsWebinars option, DateTime? date)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task UpdateAsync(Webinar entity)
         {
             throw new NotImplementedException();
         }
