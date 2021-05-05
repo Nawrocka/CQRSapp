@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace EduPlatform.Application.Functions.Posts.Queries.GetPostDetail
 {
-    class GetPostDetailQueryHandler : IRequestHandler<GetPostDetailQuery, PostDetailViewModel>
+    public class GetPostDetailQueryHandler : IRequestHandler<GetPostDetailQuery, PostDetailViewModel>
     {
         private readonly IAsyncRepository<Post> _postRepository;
         private readonly IMapper _mapper;

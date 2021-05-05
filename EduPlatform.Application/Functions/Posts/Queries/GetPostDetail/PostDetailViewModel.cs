@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EduPlatform.Application.Functions.Posts.Queries.GetPostDetail
 {
-    class PostDetailViewModel
+    public class PostDetailViewModel
     {
         public int Id { get; set; }
         public string Title { get; set; }
