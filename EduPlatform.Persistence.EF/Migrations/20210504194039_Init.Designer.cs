@@ -135,7 +135,8 @@ namespace EduPlatform.Persistence.EF.Migrations
                             CategoryId = 2,
                             Date = new DateTime(2020, 11, 4, 21, 40, 37, 770, DateTimeKind.Local).AddTicks(7402),
                             Description = "Nasze aplikacje ASP.NET CORE coraz częściej są tylko aplikacją REST. To oczywiście wymaga Walidacji po stronie klienta i po stronie serwera\r\n                    Jak taką walidację jak najszybciej zrobić.Może przecież sam napisać takie warunki,\r\n                    ale przy dużej ilości klas,\r\n                    które występują jako parametry mija się to z celem.\r\n                    Możesz też skorzystać z atrybutów i oznaczyć reguły do każdej właściwości.",
-                            ImageUrl = "https://cezarywalenciuk.pl/Posts/programing/icons/_withbackground/R2/656_walidacja-z-fluentvalidation-waspnet-core--swagger.png",
+                            ImageUrl = "https://cezarywalenciuk.pl/Posts/programing/icons/_withbackground/R2/656_walidacja-z-
+                            tvalidation-waspnet-core--swagger.png",
                             Rate = 8,
                             Title = "Walidacja z FluentValidation w ASP.NET Core + Swagger",
                             Url = "https://cezarywalenciuk.pl/blog/programing/walidacja-z-fluentvalidation-waspnet-core--swagger"

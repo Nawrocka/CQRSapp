@@ -53,7 +53,12 @@ namespace EduPlatform.Persistence.EF.Repositories
         {
             foreach (var c in allCategories)
             {
-                var withMaxRate = c.Posts.Aggregate((r1, r2) => r1.Rate > r2.Rate ? r1 : r2);
+                Post withMaxRate = null;
+                
+                if (c.Posts.Count != 0)
+                {
+                    withMaxRate = c.Posts.Aggregate<Post>((r1, r2) => r1.Rate > r2.Rate ? r1 : r2);
+                }
 
                 c.Posts = new List<Post>();
 

@@ -7,7 +7,7 @@ namespace EduPlatform.Application.Common
         public enum SearchCategoryOptions
         {
             All = 0,
-            FirstBestThisMonth = 2,
-            FirstBestThisTime = 3
+            FirstBestThisMonth = 1,
+            FirstBestThisTime = 2
         }
 }

@@ -35,7 +35,7 @@ namespace EduPlatform.Application.Mapper
             CreateMap<Webinar, CreateWebinarCommand>().ReverseMap();
 
             CreateMap<Post, CreatePostCommand>().ReverseMap();
-            CreateMap<Post, UpdatePostCommand>();
+            CreateMap<Post, UpdatePostCommand>().ReverseMap();
         }
     }
 }
