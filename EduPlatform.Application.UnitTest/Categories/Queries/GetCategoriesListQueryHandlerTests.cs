@@ -20,13 +20,13 @@ namespace EduPlatform.Application.UnitTest.Categories.Queries
         private readonly Mock<ICategoryRepository> _categoryRepositoryMock = new Mock<ICategoryRepository>();
         private readonly IMapper _mapper;
         public GetCategoriesListQueryHandlerTests()
-        {
-            _handler = new GetCategoriesListQueryHandler(_categoryRepositoryMock.Object, _mapper);
+        {            
             var configurationProvider = new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile<MappingProfile>();
             });
             _mapper = configurationProvider.CreateMapper();
+            _handler = new GetCategoriesListQueryHandler(_categoryRepositoryMock.Object, _mapper);
         }
 
         [Fact]
